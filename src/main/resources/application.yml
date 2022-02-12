@@ -1,3 +1,9 @@
 micronaut:
   application:
     name: crypto-dashboard-service
+  caches:
+    lib-charts:
+      expire-after-write: 1h
+
+lookIntoBitcoin:
+  url: ${LOOKINTOBITCOIN_URL:`https://www.lookintobitcoin.com`}
