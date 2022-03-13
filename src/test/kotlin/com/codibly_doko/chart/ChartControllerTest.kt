@@ -1,6 +1,7 @@
 package com.codibly_doko.chart
 
 import com.codibly_doko.chart.dto.ChartDto
+import io.micronaut.context.annotation.Property
 import io.micronaut.context.annotation.Replaces
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.client.HttpClient
@@ -12,6 +13,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 @MicronautTest
+@Property(name = "micronaut.security.enabled", value = "false")
 internal class ChartControllerTest {
 
     @Inject
