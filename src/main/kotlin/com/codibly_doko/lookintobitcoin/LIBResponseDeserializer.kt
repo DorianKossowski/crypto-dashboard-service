@@ -8,15 +8,19 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer
 import com.fasterxml.jackson.databind.node.ArrayNode
 
 abstract class LIBResponseDeserializer(vc: Class<*>?) : StdDeserializer<LIBChartResponseDto>(vc) {
+    companion object {
+        const val DROP_FIRST_N = 10
+    }
 
     override fun deserialize(jsonParser: JsonParser, context: DeserializationContext): LIBChartResponseDto {
         val node: JsonNode = jsonParser.codec.readTree(jsonParser)
         val dataArrayNode: ArrayNode = node.get("response").get("props").get("figure").withArray("data")
         for (dataNode in dataArrayNode) {
-            val name = dataNode.get("name").asText()!!
+            val name = dataNode.get("name").asText()
+                ?: throw IllegalArgumentException("Missing name node in lookintobitcoin response")
             if (name == getChartName()) {
-                val dates = dataNode.withArray<ArrayNode>("x").map { it.asText()!! }
-                val values = dataNode.withArray<ArrayNode>("y").map { it.asDouble() }
+                val dates = dataNode.withArray<ArrayNode>("x").map { it.asText() }.drop(DROP_FIRST_N)
+                val values = dataNode.withArray<ArrayNode>("y").map { it.asDouble() }.drop(DROP_FIRST_N)
                 return createDto(name, dates, values)
             }
         }

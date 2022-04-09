@@ -14,7 +14,7 @@ class DummyUserSetupEventListener(private val userRepository: UserRepository) {
     fun onApplicationEvent(event: ApplicationStartupEvent?) {
         if (userRepository.findAll().none()) {
             userRepository.save(
-                User(null, "dummy", "password")
+                User(null, "dummy", "pass")
             )
         }
     }

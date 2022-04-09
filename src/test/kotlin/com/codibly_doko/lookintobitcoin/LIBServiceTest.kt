@@ -1,5 +1,6 @@
 package com.codibly_doko.lookintobitcoin
 
+import com.codibly_doko.lookintobitcoin.dto.LIBBitcoinChartResponseDto
 import com.codibly_doko.lookintobitcoin.dto.LIBReserveRiskChartResponseDto
 import com.codibly_doko.lookintobitcoin.dto.LIBZScoreChartResponseDto
 import org.assertj.core.api.Assertions.assertThat
@@ -27,5 +28,13 @@ internal class LIBServiceTest {
         whenever(libClient.fetchReserveRisk(any())).thenReturn(expected)
 
         assertThat(libService.getReserveRiskChart()).isSameAs(expected)
+    }
+
+    @Test
+    internal fun shouldGetBitcoinChart() {
+        val expected: LIBBitcoinChartResponseDto = mock()
+        whenever(libClient.fetchBitcoin(any())).thenReturn(expected)
+
+        assertThat(libService.getBitcoinChart()).isSameAs(expected)
     }
 }

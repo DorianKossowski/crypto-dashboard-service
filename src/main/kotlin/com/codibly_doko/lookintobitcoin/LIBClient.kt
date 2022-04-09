@@ -1,7 +1,7 @@
 package com.codibly_doko.lookintobitcoin
 
+import com.codibly_doko.lookintobitcoin.dto.LIBBitcoinChartResponseDto
 import com.codibly_doko.lookintobitcoin.dto.LIBChartRequestDto
-import com.codibly_doko.lookintobitcoin.dto.LIBReserveRiskChartRequestDto
 import com.codibly_doko.lookintobitcoin.dto.LIBReserveRiskChartResponseDto
 import com.codibly_doko.lookintobitcoin.dto.LIBZScoreChartResponseDto
 import io.micronaut.http.annotation.Body
@@ -15,5 +15,8 @@ interface LIBClient {
     fun fetchZScore(@Body requestDto: LIBChartRequestDto): LIBZScoreChartResponseDto
 
     @Post("/django_plotly_dash/app/reserve_risk/_dash-update-component")
-    fun fetchReserveRisk(@Body requestDto: LIBReserveRiskChartRequestDto): LIBReserveRiskChartResponseDto
+    fun fetchReserveRisk(@Body requestDto: LIBChartRequestDto): LIBReserveRiskChartResponseDto
+
+    @Post("/django_plotly_dash/app/reserve_risk/_dash-update-component")
+    fun fetchBitcoin(@Body requestDto: LIBChartRequestDto): LIBBitcoinChartResponseDto
 }

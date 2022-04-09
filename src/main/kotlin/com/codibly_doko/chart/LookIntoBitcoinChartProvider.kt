@@ -12,7 +12,8 @@ open class LookIntoBitcoinChartProvider(private val lookIntoBitcoinFacade: LIBFa
     companion object {
         private val CHART_PROVIDERS = mapOf<ChartType, (LIBFacade) -> LIBChartResponseDto>(
             ChartType.MVRV_ZSCORE to { libFacade -> libFacade.getZScoreChart() },
-            ChartType.RESERVE_RISK to { libFacade -> libFacade.getReserveRiskChart() }
+            ChartType.RESERVE_RISK to { libFacade -> libFacade.getReserveRiskChart() },
+            ChartType.BITCOIN to { libFacade -> libFacade.getBitcoinChart() },
         )
     }
 
@@ -20,7 +21,9 @@ open class LookIntoBitcoinChartProvider(private val lookIntoBitcoinFacade: LIBFa
 
     @Cacheable("lib-charts")
     override fun getChart(chartType: ChartType): ChartDto {
-        val zScoreChartResponseDto = CHART_PROVIDERS[chartType]!!.invoke(lookIntoBitcoinFacade)
+        val zScoreChartResponseDto =
+            (CHART_PROVIDERS[chartType] ?: throw IllegalArgumentException("$chartType is not supported"))
+                .invoke(lookIntoBitcoinFacade)
         return ChartDtoMapper.INSTANCE.fromLIBChartResponseDto(zScoreChartResponseDto)
     }
 }

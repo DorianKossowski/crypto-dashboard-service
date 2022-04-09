@@ -1,5 +1,6 @@
 package com.codibly_doko.lookintobitcoin
 
+import com.codibly_doko.lookintobitcoin.dto.LIBBitcoinChartResponseDto
 import com.codibly_doko.lookintobitcoin.dto.LIBReserveRiskChartResponseDto
 import com.codibly_doko.lookintobitcoin.dto.LIBZScoreChartResponseDto
 import jakarta.inject.Singleton
@@ -13,5 +14,9 @@ class LIBFacade(private val libService: LIBService) {
 
     fun getReserveRiskChart(): LIBReserveRiskChartResponseDto {
         return libService.getReserveRiskChart()
+    }
+
+    fun getBitcoinChart(): LIBBitcoinChartResponseDto {
+        return libService.getBitcoinChart()
     }
 }
