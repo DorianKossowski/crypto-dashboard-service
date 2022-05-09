@@ -12,5 +12,7 @@ interface AlarmDtoMapper {
         val INSTANCE: AlarmDtoMapper = Mappers.getMapper(AlarmDtoMapper::class.java)
     }
 
-    fun fromAlarms(alarm: List<Alarm>): List<AlarmDto>
+    fun fromAlarms(alarms: List<Alarm>): List<AlarmDto>
+
+    fun fromAlarm(alarm: Alarm): AlarmDto
 }

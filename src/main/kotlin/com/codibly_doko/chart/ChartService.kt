@@ -1,5 +1,6 @@
 package com.codibly_doko.chart
 
+import com.codibly_doko.common.model.ChartType
 import jakarta.inject.Singleton
 
 @Singleton

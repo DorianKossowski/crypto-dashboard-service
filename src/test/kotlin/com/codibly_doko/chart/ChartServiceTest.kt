@@ -1,6 +1,7 @@
 package com.codibly_doko.chart
 
 import com.codibly_doko.chart.dto.ChartDto
+import com.codibly_doko.common.model.ChartType
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test

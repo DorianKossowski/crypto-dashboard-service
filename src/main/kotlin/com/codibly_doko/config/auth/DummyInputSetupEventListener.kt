@@ -2,6 +2,7 @@ package com.codibly_doko.config.auth
 
 import com.codibly_doko.alarm.AlarmRepository
 import com.codibly_doko.alarm.model.Alarm
+import com.codibly_doko.common.model.ChartType
 import com.codibly_doko.user.UserRepository
 import com.codibly_doko.user.model.User
 import io.micronaut.runtime.event.ApplicationStartupEvent
@@ -24,8 +25,8 @@ class DummyInputSetupEventListener(
             )
             alarmRepository.saveAll(
                 listOf(
-                    Alarm(null, user, "My Alarm1", null, 1.23, null),
-                    Alarm(null, user, "My Alarm2", "Some alarm", 4.56, Instant.now())
+                    Alarm(null, user, "My Alarm1", null, 1.23, null, ChartType.MVRV_ZSCORE),
+                    Alarm(null, user, "My Alarm2", "Some alarm", 4.56, Instant.now(), ChartType.RESERVE_RISK)
                 )
             )
         }

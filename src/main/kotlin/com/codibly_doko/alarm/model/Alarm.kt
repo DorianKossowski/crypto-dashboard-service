@@ -1,5 +1,6 @@
 package com.codibly_doko.alarm.model
 
+import com.codibly_doko.common.model.ChartType
 import com.codibly_doko.user.model.User
 import java.time.Instant
 import java.util.*
@@ -12,5 +13,6 @@ data class Alarm(
     var name: String,
     var description: String?,
     var value: Double,
-    var lastOccurred: Instant?
+    var lastOccurred: Instant?,
+    @Enumerated(EnumType.STRING) var chartType: ChartType
 )
