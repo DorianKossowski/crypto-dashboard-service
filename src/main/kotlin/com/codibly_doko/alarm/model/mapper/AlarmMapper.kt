@@ -6,7 +6,6 @@ import com.codibly_doko.user.model.User
 import org.mapstruct.*
 import org.mapstruct.factory.Mappers
 
-
 @Mapper
 interface AlarmMapper {
     companion object {

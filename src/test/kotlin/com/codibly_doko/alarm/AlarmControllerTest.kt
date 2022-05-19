@@ -26,7 +26,7 @@ import java.util.*
 
 @MicronautTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
-internal class AlarmControllerTest {
+class AlarmControllerTest {
 
     companion object {
         private const val NAME = "SOME_NAME"

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 
-internal class ChartServiceTest {
+class ChartServiceTest {
     companion object {
         private val CHART_TYPE = ChartType.MVRV_ZSCORE
     }

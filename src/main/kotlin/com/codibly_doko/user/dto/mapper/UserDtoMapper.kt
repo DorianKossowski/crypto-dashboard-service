@@ -5,7 +5,6 @@ import com.codibly_doko.user.model.User
 import org.mapstruct.Mapper
 import org.mapstruct.factory.Mappers
 
-
 @Mapper
 interface UserDtoMapper {
     companion object {

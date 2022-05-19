@@ -11,7 +11,7 @@ import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 import java.util.*
 
-internal class UserServiceTest {
+class UserServiceTest {
     companion object {
         private const val MAIL = "mail"
         private const val PASSWORD = "pass"

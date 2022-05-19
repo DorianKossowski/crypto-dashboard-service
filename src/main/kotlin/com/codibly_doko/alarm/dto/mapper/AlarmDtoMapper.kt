@@ -5,7 +5,6 @@ import com.codibly_doko.alarm.model.Alarm
 import org.mapstruct.Mapper
 import org.mapstruct.factory.Mappers
 
-
 @Mapper
 interface AlarmDtoMapper {
     companion object {

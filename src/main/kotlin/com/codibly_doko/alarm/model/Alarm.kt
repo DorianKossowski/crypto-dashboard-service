@@ -14,5 +14,5 @@ data class Alarm(
     var description: String?,
     var value: Double,
     var lastOccurred: Instant?,
-    @Enumerated(EnumType.STRING) var chartType: ChartType
+    @Enumerated(EnumType.STRING) val chartType: ChartType
 )

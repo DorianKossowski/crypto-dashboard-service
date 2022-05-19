@@ -4,13 +4,14 @@ plugins {
     id("org.jetbrains.kotlin.plugin.allopen") version "1.6.10"
     id("com.github.johnrengelman.shadow") version "7.1.1"
     id("io.micronaut.application") version "3.1.1"
+    id("org.jlleitschuh.gradle.ktlint") version "10.1.0"
     kotlin("plugin.jpa") version "1.3.72"
 }
 
 version = "0.1"
 group = "com.codibly-doko"
 
-val kotlinVersion=project.properties.get("kotlinVersion")
+val kotlinVersion = project.properties.get("kotlinVersion")
 repositories {
     mavenCentral()
 }
@@ -38,8 +39,8 @@ dependencies {
     implementation("io.projectreactor:reactor-core")
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("org.mapstruct:mapstruct:1.4.2.Final")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
 
     annotationProcessor("io.micronaut.security:micronaut-security-annotations")
 

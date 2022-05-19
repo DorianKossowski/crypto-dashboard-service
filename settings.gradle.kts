@@ -1,2 +1,2 @@
 
-rootProject.name="crypto-dashboard-service"
+rootProject.name = "crypto-dashboard-service"

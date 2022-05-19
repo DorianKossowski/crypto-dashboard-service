@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test
 
 @MicronautTest
 @Property(name = "micronaut.security.enabled", value = "false")
-internal class ChartControllerTest {
+class ChartControllerTest {
 
     @Inject
     @field:Client("/")
@@ -39,7 +39,7 @@ internal class ChartControllerTest {
                 "dates": [ "MVRV_ZSCORE" ],
                 "values": [ 1.0 ]
             }
-        """.trimIndent()
+            """.trimIndent()
         )
     }
 

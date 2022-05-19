@@ -19,7 +19,7 @@ import java.security.Principal
 import java.time.Instant
 import java.util.*
 
-internal class AlarmServiceTest {
+class AlarmServiceTest {
 
     companion object {
         private const val NAME = "SOME_NAME"
@@ -54,7 +54,7 @@ internal class AlarmServiceTest {
         // when
         val alarms = alarmService.getAlarms(principal, CHART_TYPE).alarms
 
-        //then
+        // then
         assertThat(alarms).hasSize(1)
         assertThat(alarms[0])
             .returns(SOME_UUID, AlarmDto::id)
@@ -75,7 +75,7 @@ internal class AlarmServiceTest {
         // when
         val alarm = alarmService.addAlarm(principal, alarmDto)
 
-        //then
+        // then
         assertThat(alarm).isEqualTo(AlarmDtoMapper.INSTANCE.fromAlarm(savedAlarm))
     }
 
@@ -93,7 +93,7 @@ internal class AlarmServiceTest {
         // when
         val alarm = alarmService.updateAlarm(principal, alarmDto, alarmId.toString())
 
-        //then
+        // then
         assertThat(alarm).isEqualTo(AlarmDtoMapper.INSTANCE.fromAlarm(updatedAlarm))
     }
 
@@ -120,7 +120,7 @@ internal class AlarmServiceTest {
         // when
         alarmService.deleteAlarm(principal, alarmId.toString())
 
-        //then
+        // then
         verify(alarmRepository).delete(alarm)
     }
 }

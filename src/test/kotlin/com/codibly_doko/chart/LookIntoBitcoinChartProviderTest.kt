@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.EnumSource
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 
-internal class LookIntoBitcoinChartProviderTest {
+class LookIntoBitcoinChartProviderTest {
 
     private val libFacade: LIBFacade = mock()
     private val lookIntoBitcoinChartProvider = LookIntoBitcoinChartProvider(libFacade)

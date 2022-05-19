@@ -10,7 +10,6 @@ import io.micronaut.runtime.event.annotation.EventListener
 import jakarta.inject.Singleton
 import java.time.Instant
 
-
 @Singleton
 class DummyInputSetupEventListener(
     private val userRepository: UserRepository,
