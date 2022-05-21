@@ -7,7 +7,6 @@ import jakarta.inject.Singleton
 import org.reactivestreams.Publisher
 import reactor.core.publisher.Mono
 
-
 @Singleton
 class BasicAuthenticationProvider(private val userRepository: UserRepository) : AuthenticationProvider {
     override fun authenticate(

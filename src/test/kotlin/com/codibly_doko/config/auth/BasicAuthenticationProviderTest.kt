@@ -12,7 +12,7 @@ import org.mockito.kotlin.whenever
 import reactor.core.publisher.Mono
 import java.util.*
 
-internal class BasicAuthenticationProviderTest {
+class BasicAuthenticationProviderTest {
     companion object {
         private const val MAIL = "mail"
         private const val PASSWORD = "pass"

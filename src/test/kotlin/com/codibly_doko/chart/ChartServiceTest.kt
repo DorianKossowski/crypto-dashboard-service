@@ -1,13 +1,14 @@
 package com.codibly_doko.chart
 
 import com.codibly_doko.chart.dto.ChartDto
+import com.codibly_doko.common.model.ChartType
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 
-internal class ChartServiceTest {
+class ChartServiceTest {
     companion object {
         private val CHART_TYPE = ChartType.MVRV_ZSCORE
     }

@@ -1,6 +1,7 @@
 package com.codibly_doko.chart
 
 import com.codibly_doko.chart.dto.ChartDto
+import com.codibly_doko.common.model.ChartType
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.scheduling.TaskExecutors

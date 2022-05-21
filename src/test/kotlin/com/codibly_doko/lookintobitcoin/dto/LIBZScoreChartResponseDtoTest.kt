@@ -1,6 +1,6 @@
 package com.codibly_doko.lookintobitcoin.dto
 
-internal class LIBZScoreChartResponseDtoTest : LIBChartResponseDtoTest() {
+class LIBZScoreChartResponseDtoTest : LIBChartResponseDtoTest() {
     override fun getName() = "Z-Score"
 
     override fun deserializationFunction(): (String) -> LIBChartResponseDto {

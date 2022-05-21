@@ -1,6 +1,6 @@
 package com.codibly_doko.lookintobitcoin.dto
 
-internal class LIBReserveRiskChartResponseDtoTest : LIBChartResponseDtoTest() {
+class LIBReserveRiskChartResponseDtoTest : LIBChartResponseDtoTest() {
     override fun getName() = "Reserve Risk"
 
     override fun deserializationFunction(): (String) -> LIBChartResponseDto {

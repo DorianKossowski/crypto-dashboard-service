@@ -1,6 +1,6 @@
 package com.codibly_doko.lookintobitcoin.dto
 
-internal class LIBBitcoinChartResponseDtoTest : LIBChartResponseDtoTest() {
+class LIBBitcoinChartResponseDtoTest : LIBChartResponseDtoTest() {
 
     override fun getName() = "BTC Price"
 

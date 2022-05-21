@@ -1,6 +1,7 @@
 package com.codibly_doko.chart
 
 import com.codibly_doko.chart.dto.ChartDto
+import com.codibly_doko.common.model.ChartType
 import com.codibly_doko.lookintobitcoin.LIBFacade
 import com.codibly_doko.lookintobitcoin.dto.LIBZScoreChartResponseDto
 import org.assertj.core.api.Assertions.assertThat
@@ -10,7 +11,7 @@ import org.junit.jupiter.params.provider.EnumSource
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 
-internal class LookIntoBitcoinChartProviderTest {
+class LookIntoBitcoinChartProviderTest {
 
     private val libFacade: LIBFacade = mock()
     private val lookIntoBitcoinChartProvider = LookIntoBitcoinChartProvider(libFacade)

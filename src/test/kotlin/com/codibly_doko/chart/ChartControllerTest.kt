@@ -1,6 +1,7 @@
 package com.codibly_doko.chart
 
 import com.codibly_doko.chart.dto.ChartDto
+import com.codibly_doko.common.model.ChartType
 import io.micronaut.context.annotation.Property
 import io.micronaut.context.annotation.Replaces
 import io.micronaut.http.HttpRequest
@@ -14,7 +15,7 @@ import org.junit.jupiter.api.Test
 
 @MicronautTest
 @Property(name = "micronaut.security.enabled", value = "false")
-internal class ChartControllerTest {
+class ChartControllerTest {
 
     @Inject
     @field:Client("/")
@@ -38,7 +39,7 @@ internal class ChartControllerTest {
                 "dates": [ "MVRV_ZSCORE" ],
                 "values": [ 1.0 ]
             }
-        """.trimIndent()
+            """.trimIndent()
         )
     }
 

@@ -9,7 +9,7 @@ import org.mockito.kotlin.any
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 
-internal class LIBServiceTest {
+class LIBServiceTest {
 
     private val libClient: LIBClient = mock()
     private val libService = LIBService(libClient)

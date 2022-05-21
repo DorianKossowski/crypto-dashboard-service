@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-internal abstract class LIBChartResponseDtoTest(val objectMapper: ObjectMapper = ObjectMapper()) {
+abstract class LIBChartResponseDtoTest(val objectMapper: ObjectMapper = ObjectMapper()) {
 
     @Test
     internal fun shouldDeserialize() {
@@ -35,7 +35,7 @@ internal abstract class LIBChartResponseDtoTest(val objectMapper: ObjectMapper =
         assertThat(dto)
             .returns(getName(), LIBChartResponseDto::name)
             .returns(listOf("c"), LIBChartResponseDto::dates)
-            .returns(listOf(3.0), LIBChartResponseDto::values);
+            .returns(listOf(3.0), LIBChartResponseDto::values)
     }
 
     abstract fun getName(): String

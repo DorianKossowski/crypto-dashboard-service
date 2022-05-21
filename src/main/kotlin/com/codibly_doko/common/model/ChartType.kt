@@ -1,4 +1,4 @@
-package com.codibly_doko.chart
+package com.codibly_doko.common.model
 
 enum class ChartType {
     MVRV_ZSCORE,
